@@ -118,7 +118,7 @@ Follow this guide to make it works locally.
 
 ### Installation
 
-1. Get a free API Key at [nftport.xzy](https://nftport.xyz) and [alchemy.com](https://alchemy.com)
+1. Get a free API Key at [tatum.com](https://tatum.com) and [alchemy.com](https://alchemy.com)
 2. Clone the repo
    ```sh
    git clone https://github.com/povedaaqui/bookverse.git
@@ -130,7 +130,7 @@ Follow this guide to make it works locally.
 4. Create an .env file and Enter your APIs in `env`
    ```js
    const REACT_APP_ALCHEMY_KEY = 'ENTER YOUR API';
-   const REACT_APP_NFT_PORT = 'ENTER YOUR API';
+   const REACT_APP_TATUM = 'ENTER YOUR API';
    ```
 5. Choose the chain and add it to `env`
    ```js
