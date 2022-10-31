@@ -30,23 +30,23 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/povedaaqui/projectb">
+  <a href="https://github.com/povedaaqui/bookverse">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">projectb</h3>
+<h3 align="center">bookverse</h3>
 
   <p align="center">
-    projectb is a Collectible Books (cBooks) Marketplace (also know as NFTBooks)
+    Bookverse is a Collectible Books (cBooks) Marketplace (also know as NFTBooks)
     <br />
-    <a href="https://github.com/povedaaqui/projectb"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/povedaaqui/bookverse"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://projectbooks.vercel.app/">View Demo</a>
+    <a href="https://bookverse.vercel.app/">View Demo</a>
     ·
-    <a href="https://github.com/povedaaqui/projectb/issues">Report Bug</a>
+    <a href="https://github.com/povedaaqui/bookverse/issues">Report Bug</a>
     ·
-    <a href="https://github.com/povedaaqui/projectb/issues">Request Feature</a>
+    <a href="https://github.com/povedaaqui/bookverse/issues">Request Feature</a>
   </p>
 </div>
 
@@ -87,7 +87,7 @@
 
 It wants to be a new alternative to buy, sell, and read digital books. Thanks to the blockchain technology, sellers and publishers are been able to get up to 90% royalties, and for the firs time ever in this market, resale royalties as well. The users will be able to read their favorite collectibles using the incoming in-app reader and any third party reader. Also, they will be able to resell their cBooks in secondary marketplaces. The applications are just limited by our imagination.
 
-Demo: <a href="https://projectbooks.vercel.app/">view demo</a>
+Demo: <a href="https://bookverse.vercel.app/">view demo</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -121,7 +121,7 @@ Follow this guide to make it works locally.
 1. Get a free API Key at [nftport.xzy](https://nftport.xyz) and [alchemy.com](https://alchemy.com)
 2. Clone the repo
    ```sh
-   git clone https://github.com/povedaaqui/projectb.git
+   git clone https://github.com/povedaaqui/bookverse.git
    ```
 3. Install NPM packages
    ```sh
@@ -156,7 +156,7 @@ First of all, mint an NFT in the NFT Products Contract you created before on NFT
 
 List the NFTs using the Marketplace contract you created on Thirdweb.com, after that, they should appear on the Store page.
 
-_For more examples, please refer to the [Documentation](https://github.com/PovedaAqui/projectb)_
+_For more examples, please refer to the [Documentation](https://github.com/PovedaAqui/bookverse)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -171,7 +171,7 @@ _For more examples, please refer to the [Documentation](https://github.com/Poved
 - [ ] Implement someday pending changes
 - [ ] Fix bugs
 
-See the [open issues](https://github.com/povedaaqui/projectb/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/povedaaqui/bookverse/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -209,7 +209,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Luis - [@povedaaqui](https://twitter.com/povedaaqui) - luis.poveda9321@gmail.com
 
-Project Link: [https://github.com/povedaaqui/projectb](https://github.com/povedaaqui/projectb)
+Project Link: [https://github.com/povedaaqui/bookverse](https://github.com/povedaaqui/bookverse)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -230,16 +230,16 @@ Project Link: [https://github.com/povedaaqui/projectb](https://github.com/poveda
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/povedaaqui/projectb.svg?style=for-the-badge
-[contributors-url]: https://github.com/povedaaqui/projectb/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/povedaaqui/projectb.svg?style=for-the-badge
-[forks-url]: https://github.com/povedaaqui/projectb/network/members
-[stars-shield]: https://img.shields.io/github/stars/povedaaqui/projectb.svg?style=for-the-badge
-[stars-url]: https://github.com/povedaaqui/projectb/stargazers
-[issues-shield]: https://img.shields.io/github/issues/povedaaqui/projectb.svg?style=for-the-badge
-[issues-url]: https://github.com/povedaaqui/projectb/issues
-[license-shield]: https://img.shields.io/github/license/povedaaqui/projectb.svg?style=for-the-badge
-[license-url]: https://github.com/povedaaqui/projectb/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/povedaaqui/bookverse.svg?style=for-the-badge
+[contributors-url]: https://github.com/povedaaqui/bookverse/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/povedaaqui/bookverse.svg?style=for-the-badge
+[forks-url]: https://github.com/povedaaqui/bookverse/network/members
+[stars-shield]: https://img.shields.io/github/stars/povedaaqui/bookverse.svg?style=for-the-badge
+[stars-url]: https://github.com/povedaaqui/bookverse/stargazers
+[issues-shield]: https://img.shields.io/github/issues/povedaaqui/bookverse.svg?style=for-the-badge
+[issues-url]: https://github.com/povedaaqui/bookverse/issues
+[license-shield]: https://img.shields.io/github/license/povedaaqui/bookverse.svg?style=for-the-badge
+[license-url]: https://github.com/povedaaqui/bookverse/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/luiscarlospoveda
 [product-screenshot]: images/screenshot.png
