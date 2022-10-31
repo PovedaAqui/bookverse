@@ -34,7 +34,7 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">bookverse</h3>
+<h3 align="center">Bookverse</h3>
 
   <p align="center">
     Bookverse is a Collectible Books (cBooks) Marketplace (also know as NFTBooks)
