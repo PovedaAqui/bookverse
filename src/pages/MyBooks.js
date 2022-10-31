@@ -10,7 +10,7 @@ const MyBooks = () => {
     const [totalBalance, setTotalBalance] = useState(null);
     const [ipfs, setIpfs] = useState(null);
     const chain = process.env.REACT_APP_CHAIN;
-    const nftContract = process.env.REACT_APP_NFTCONTRACT;
+    const nftContract = process.env.REACT_APP_DROP_CONTRACT;
 
     const fetchBalance = async () => {
         const res = await fetch(`https://bookverse-proxy.herokuapp.com/https://api-eu1.tatum.io/v3/multitoken/address/balance/${chain}/${address}`, {
