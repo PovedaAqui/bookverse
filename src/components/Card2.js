@@ -58,7 +58,7 @@ const Card2 = ({image, listingId, ...props}) => {
                         </svg>
                         <span className="text-xl font-bold text-gray-900 mt-0 ml-1">{price()}</span>
                         <span className="text-xl font-bold text-gray-700 mt-0 ml-1">{`- ${maticToUsd} USD`}</span>
-                        <span className="text-xl font-bold text-gray-700 mt-0 ml-auto">{`${supply()}`}</span>
+                        <span className="text-xl font-bold text-gray-700 mt-0 ml-auto">{supply() === undefined? "..." : `${supply()}`}</span>
                     </div>
                 </div>
             </div>
