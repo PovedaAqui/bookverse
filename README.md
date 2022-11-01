@@ -96,12 +96,12 @@ Demo: <a href="https://bookverse.vercel.app/">view demo</a>
 ### Built With
 
 * [![React][React.js]][React-url]
-* [![TailwindCSS][TailwindCSS]][TailwindCSS]
-* [![wagmi.sh][wagmi.sh]][wagmi.sh]
-* [![Thirdweb][Thirdweb.com]][Thirdweb.com]
+* [![TailwindCSS][TailwindCSS]][TailwindCSS-url]
+* [![wagmi.sh][wagmi.sh]][wagmi-url]
+* [![Thirdweb][Thirdweb.com]][Thirdweb-url]
 * [![Tatum][Tatum]][Tatum-url]
-* [![NFT.storage][NFT.storage]][NFT.storage]
-* [![Chainlink][Chainlink]][Chainlink]
+* [![NFT.storage][NFT.storage]][NFT.storage-url]
+* [![Chainlink][Chainlink]][Chainlink-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -261,10 +261,15 @@ Project Link: [https://github.com/povedaaqui/bookverse](https://github.com/poved
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [JQuery-url]: https://jquery.com 
 [TailwindCSS]: https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white
+[TailwindCSS-url]: https://tailwindcss.com
 [wagmi.sh]: https://img.shields.io/badge/wagmi.sh-wagmi.sh-black
+[wagmi-url]: https://wagmi.sh
 [nftport.xyz]: https://img.shields.io/badge/nftport.xyz-nftport.xyz-black
 [Thirdweb.com]: https://img.shields.io/badge/thirdweb.com-thirdweb.com-purple
+[Thirdweb-url]: https://thirdweb.com
 [Chainlink]: https://img.shields.io/badge/chainlink-chain.link-blue
+[Chainlink-url]: https://chain.link
 [NFT.storage]: https://img.shields.io/badge/NFT.storage-NFT.storage-yellow
+[NFT.storage-url]: https://nft.storage
 [Tatum]: https://img.shields.io/badge/Tatum-Tatum.io-blue
 [Tatum-url]: https://tatum.io
