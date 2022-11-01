@@ -98,7 +98,7 @@ Demo: <a href="https://bookverse.vercel.app/">view demo</a>
 * [![React][React.js]][React-url]
 * [![TailwindCSS][TailwindCSS]][TailwindCSS]
 * [![wagmi.sh][wagmi.sh]][wagmi.sh]
-* [![Thirdweb.com][Thirdweb]][Thirdweb.com]
+* [![Thirdweb][Thirdweb.com]][Thirdweb.com]
 * [![Tatum][Tatum]][Tatum]
 * [![NFT.storage][NFT.storage]][NFT.storage]
 * [![Chainlink][Chainlink]][Chainlink]
