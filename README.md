@@ -99,8 +99,9 @@ Demo: <a href="https://bookverse.vercel.app/">view demo</a>
 * [![TailwindCSS][TailwindCSS]][TailwindCSS]
 * [![wagmi.sh][wagmi.sh]][wagmi.sh]
 * [![Thirdweb.com][Thirdweb.com]][Thirdweb.com]
-* [![nftport.xyz][nftport.xyz]][nftport.xyz]
+* [![tatum.io][tatum.io]][Tatum]
 * [![NFT.storage][NFT.storage]][NFT.storage]
+* [![Chainlink][Chain.link]][Chainlink]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -265,3 +266,4 @@ Project Link: [https://github.com/povedaaqui/bookverse](https://github.com/poved
 [Thirdweb.com]: https://img.shields.io/badge/thirdweb.com-thirdweb.com-purple
 [Chainlink]: https://img.shields.io/badge/chainlink-chain.link-blue
 [NFT.storage]: https://img.shields.io/badge/NFT.storage-NFT.storage-yellow
+[Tatum]: https://img.shields.io/badge/Tatum-Tatum.io-blue
