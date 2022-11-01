@@ -85,7 +85,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-It wants to be a new alternative to buy, sell, and read digital books. Thanks to the blockchain technology, sellers and publishers are been able to get up to 90% royalties, and for the firs time ever in this market, resale royalties as well. The users will be able to read their favorite collectibles using the incoming in-app reader and any third party reader. Also, they will be able to resell their cBooks in secondary marketplaces. The applications are just limited by our imagination.
+Bookverse is a new alternative to buy, sell, and read digital books. Thanks to the blockchain technology, sellers and publishers are been able to get up to 99% royalties, and for the firs time ever in this market, resale royalties as well. The users will be able to read their favorite collectibles using the incoming in-app reader and any third party reader. Also, they will be able to resell their cBooks in secondary marketplaces. The applications are just limited by our imagination.
 
 Demo: <a href="https://bookverse.vercel.app/">view demo</a>
 
@@ -119,7 +119,7 @@ Follow this guide to make it works locally.
 
 ### Installation
 
-1. Get a free API Key at [tatum.com](https://tatum.com) and [alchemy.com](https://alchemy.com)
+1. Get a free API Key at [tatum.io](https://tatum.io) and [alchemy.com](https://alchemy.com)
 2. Clone the repo
    ```sh
    git clone https://github.com/povedaaqui/bookverse.git
@@ -135,15 +135,15 @@ Follow this guide to make it works locally.
    ```
 5. Choose the chain and add it to `env`
    ```js
-   const REACT_APP_CHAIN = 'polygon';
+   const REACT_APP_CHAIN = 'MATIC';
    ```
-6. Create marketplace contract on Thirdweb, then, add it to `env`
+6. Create Edition Drop contract on Thirdweb, then, add it to `env`
    ```js
-   const REACT_APP_MARKETPLACE_CONTRACT = 'ENTER YOUR CONTRACT ADDRESS';
+   const REACT_APP_DROP_CONTRACT = 'ENTER YOUR CONTRACT ADDRESS';
    ```
-7. Create NFT products contract on NFTport, then, add it to `env`
+7. We're using a relayer to avoid gas fees for users, provided by Openzeppelin, then, add it to `env`
    ```js
-   const REACT_APP_NFT_PORT = 'ENTER YOUR CONTRACT ADDRESS';
+   const REACT_APP_WEBHOOK_URL = 'ENTER YOUR CONTRACT ADDRESS';
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -153,9 +153,9 @@ Follow this guide to make it works locally.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-First of all, mint an NFT in the NFT Products Contract you created before on NFTPort.xyz, just the NFT minted in this contract will be shown in MyBooks page. Find a metadata example in the metadata folder included in this repo.
+First of all, create an Edition Drop Contract in thirdweb, mint some NFTs for testing, just the NFTs minted in this contract will be shown in MyBooks page (as long as you're holding it in the connected wallet). Find a metadata example in the metadata folder included in this repo.
 
-List the NFTs using the Marketplace contract you created on Thirdweb.com, after that, they should appear on the Store page.
+The NFTs listed in the contract should appear on the Store page.
 
 _For more examples, please refer to the [Documentation](https://github.com/PovedaAqui/bookverse)_
 
@@ -167,7 +167,7 @@ _For more examples, please refer to the [Documentation](https://github.com/Poved
 ## Roadmap
 
 - [ ] Improve UI/UX
-- [ ] Test with Collection Contract instead of Products Contract
+- [ ] Improve MyBooks page
 - [ ] Create a backend
 - [ ] Implement someday pending changes
 - [ ] Fix bugs
@@ -219,7 +219,7 @@ Project Link: [https://github.com/povedaaqui/bookverse](https://github.com/poved
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* [NFTport](https://nftport.xyz)
+* [Tatum](https://tatum.io)
 * [Thirdweb](https://thirdweb.com)
 * [wagmi.sh](https://wagmi.sh)
 * [Alchemy](https://alchemy.com)
