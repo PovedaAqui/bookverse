@@ -133,7 +133,7 @@ Follow this guide to make it works locally.
    const REACT_APP_ALCHEMY_KEY = 'ENTER YOUR API';
    const REACT_APP_TATUM = 'ENTER YOUR API';
    ```
-5. Choose the chain and add it to `env`
+5. Choose the chain for Tatum and add it to `env`
    ```js
    const REACT_APP_CHAIN = 'MATIC';
    ```
@@ -141,7 +141,7 @@ Follow this guide to make it works locally.
    ```js
    const REACT_APP_DROP_CONTRACT = 'ENTER YOUR CONTRACT ADDRESS';
    ```
-7. We're using a relayer to avoid gas fees for users, provided by Openzeppelin, then, add it to `env`
+7. We're using a relayer to avoid gas fees for users, provided by Openzeppelin, create yours, then, add it to `env`
    ```js
    const REACT_APP_WEBHOOK_URL = 'ENTER YOUR CONTRACT ADDRESS';
    ```
