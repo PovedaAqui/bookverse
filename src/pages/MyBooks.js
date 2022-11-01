@@ -92,7 +92,7 @@ const MyBooks = () => {
 
     return (
         <div className='grid grid-cols-1 gap-y-3 gap-x-0 mt-1 lg:grid-cols-4'>
-            {isConnected && !ipfs? <h1>Loading your books...</h1> : ipfs.map((nft, id)=>{
+            {isConnected && !ipfs? <h1>Loading your books...</h1> : ipfs?.map((nft, id)=>{
                 return (
                     <div key={id}>
                         <Card name={nft?.name} description={nft?.description} image={nft?.image} external_url={nft?.external_url} tokenId={nft?.token_id} />
