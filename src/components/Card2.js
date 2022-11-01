@@ -19,9 +19,18 @@ const Card2 = ({image, listingId, ...props}) => {
     const price = () => {
         if (priceData) {
         return priceData.map(data => (parseInt(data.price)*10**-18));
-    }}
+        }
+    }
 
     const maticToUsd = !price()? "N/A" : price() * tokenPrice;
+
+    const supply = () => {
+        if (priceData) {
+            const maxqty = priceData.map(data => data.maxQuantity);
+            const qty = priceData.map(data2 => data2.currentMintSupply)
+            return `${qty}/${maxqty}`
+        }
+    }
 
     const OpenModal = () => {
         setIsOpen(!isOpen)
@@ -49,6 +58,7 @@ const Card2 = ({image, listingId, ...props}) => {
                         </svg>
                         <span className="text-xl font-bold text-gray-900 mt-0 ml-1">{price()}</span>
                         <span className="text-xl font-bold text-gray-700 mt-0 ml-1">{`- ${maticToUsd} USD`}</span>
+                        <span className="text-xl font-bold text-gray-700 mt-0 ml-auto">{`${supply()}`}</span>
                     </div>
                 </div>
             </div>
