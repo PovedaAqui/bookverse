@@ -99,9 +99,9 @@ Demo: <a href="https://bookverse.vercel.app/">view demo</a>
 * [![TailwindCSS][TailwindCSS]][TailwindCSS]
 * [![wagmi.sh][wagmi.sh]][wagmi.sh]
 * [![Thirdweb.com][Thirdweb.com]][Thirdweb.com]
-* [![tatum.io][tatum.io]][Tatum]
+* [![tatum][tatum]][Tatum]
 * [![NFT.storage][NFT.storage]][NFT.storage]
-* [![Chainlink][Chain.link]][Chainlink]
+* [![Chainlink][Chainlink]][Chainlink]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
