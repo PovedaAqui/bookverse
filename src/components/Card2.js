@@ -37,8 +37,8 @@ const Card2 = ({image, listingId, ...props}) => {
     }
 
     return (
-        <div className="flex justify-start relative m-2">
-            <div className="rounded-lg shadow-lg bg-white max-w-sm">
+        <div className="flex justify-center relative m-2 lg:mx-0.5 lg:my-2">
+            <div className="rounded-lg shadow-lg bg-white max-w-sm lg:max-w-xs">
                 <a href="javascript:void(0)" onClick={()=> OpenModal()}>
                     <img className="rounded-t-lg" src={url} alt=""/>
                 </a>

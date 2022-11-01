@@ -22,7 +22,7 @@ const MyBooks = () => {
             }
         )
         .then(res => res.json())
-        .then(res2 => res2.find(element => element?.contractAddress === "0xf66f067a0a9a525e5a8b8e7a732857653e6994f5"))
+        .then(res2 => res2.find(element => element?.contractAddress?.toLowerCase() === nftContract.toLowerCase()))
         .then(res3 => res3.balances.map(element => element?.tokenId))
         .then(res4 => setTotalBalance(res4))
     };
