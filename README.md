@@ -209,7 +209,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 ## Contact
 
 Luis - [@povedaaqui](https://twitter.com/povedaaqui) - luis.poveda9321@gmail.com
-
+Juan - [@juansamitier](https://twitter.com/juansamitier) - juan.samitier077@gmail.com
 Project Link: [https://github.com/povedaaqui/bookverse](https://github.com/povedaaqui/bookverse)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
