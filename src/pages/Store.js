@@ -2,17 +2,23 @@ import React from 'react';
 import { useContract, useNFTs } from '@thirdweb-dev/react';
 import Card2 from '../components/Card2';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { useNetwork, useAccount } from 'wagmi';
 
 const queryClient = new QueryClient();
 
 const Store = () => {
 
     const { contract } = useContract(process.env.REACT_APP_DROP_CONTRACT);
+
+    const { chain } = useNetwork();
+    const { address } = useAccount();
+
     const { data: nfts, isLoading } = useNFTs(contract, { start: 0, count: 100 });
     
     return (
         <div className='grid grid-cols-1 gap-3 mt-1 lg:grid-cols-4 lg:gap-x-0'>
             {isLoading && <h1>Loading...</h1>}
+            {address && chain.network!=="matic" && alert("Please switch to Polygon")}
             {nfts && nfts?.map((nfts, id) => {
                 return (
                     <div key={id}>

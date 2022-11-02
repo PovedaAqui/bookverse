@@ -53,7 +53,7 @@ const MyBooks = () => {
         .then(data2 => data2 === params.length && setTokens(params))
         .catch(error => console.log(error))
     };
-        totalBalance!==null && totalBalance.map(ids => fetchMetadata(ids));
+        totalBalance!==null && totalBalance?.map(ids => fetchMetadata(ids));
     }, [!!totalBalance]);
     
     //Third call
@@ -95,7 +95,7 @@ const MyBooks = () => {
             {isConnected && !ipfs? <h1>Loading your books...</h1> : ipfs?.map((nft, id)=>{
                 return (
                     <div key={id}>
-                        <Card name={nft?.name} description={nft?.description} image={nft?.image} external_url={nft?.external_url} tokenId={nft?.token_id} />
+                        <Card name={nft?.name} description={nft?.description} image={nft?.image} external_url={nft?.external_url} tokenId={nft?.external_url?.substr(66, 1)} />
                     </div>
                 )
             })}
