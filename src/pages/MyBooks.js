@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { useAccount } from 'wagmi';
 import { useQuery } from '@tanstack/react-query';
 import Card from '../components/Card';
+import { data } from 'autoprefixer';
 
 const MyBooks = () => {
 
     const { address, isConnected } = useAccount();
-    const [tokens, setTokens] = useState(null);
-    const [totalBalance, setTotalBalance] = useState(null);
-    const [ipfs, setIpfs] = useState(null);
+    // const [tokens, setTokens] = useState(null);
+    // const [totalBalance, setTotalBalance] = useState(null);
+    // const [ipfs, setIpfs] = useState(null);
     const chain = process.env.REACT_APP_CHAIN;
     const nftContract = process.env.REACT_APP_DROP_CONTRACT;
 
@@ -21,21 +22,21 @@ const MyBooks = () => {
                 }
             }
         )
-        .then(res => res.json())
-        .then(res2 => res2.find(element => element?.contractAddress?.toLowerCase() === nftContract.toLowerCase()))
-        .then(res3 => res3.balances.map(element => element?.tokenId))
-        .then(res4 => setTotalBalance(res4))
+        const result = await res.json();
+        const resultFiltered = result.find(element => element?.contractAddress?.toLowerCase() === nftContract.toLowerCase());
+        const resultBalances = resultFiltered.balances.map(ids => ids.tokenId)
+        return resultBalances;
+        // .then(res2 => res2.find(element => element?.contractAddress?.toLowerCase() === nftContract.toLowerCase()))
+        // .then(res3 => res3.balances.map(element => element?.tokenId))
+        // .then(res4 => setTotalBalance(res4))
     };
 
     //First call
-    const { data: balance } = useQuery(['nfts'], fetchBalance);
+    const { data: balance } = useQuery({ queryKey: ['nfts'], queryFn: fetchBalance});
 
     //Second call
-    useEffect(() => {
-        const fetchMetadata = async (ids) => {
-            let params = [];
-            let res = [];
-            res = await fetch(`https://bookverse-proxy.herokuapp.com/https://api-eu1.tatum.io/v3/multitoken/metadata/${chain}/${nftContract}/${ids}`, {
+    const fetchMetadata = async (ids) => {
+        const res = await fetch(`https://bookverse-proxy.herokuapp.com/https://api-eu1.tatum.io/v3/multitoken/metadata/${chain}/${nftContract}/${ids}`, {
             "method": "GET",
             "headers": {
                 "Content-Type": "application/json",
@@ -43,52 +44,35 @@ const MyBooks = () => {
                 }
             }
         )
-        .then(res => {
-            if(!res.ok) {
-                throw Error("There was an error in the second call, please report it to support")
-            }
-            return res.json();
-        })
-        .then(data => params.push(data))
-        .then(data2 => data2 === params.length && setTokens(params))
-        .catch(error => console.log(error))
+        const result = await res.json();
+        return result;
     };
-        totalBalance!==null && totalBalance?.map(ids => fetchMetadata(ids));
-    }, [!!totalBalance]);
-    
+
+    const { data: tokenId } = useQuery({ queryKey: ['tokenId'], queryFn: () => Promise.all(balance.map(ids => fetchMetadata(ids))), enabled: !!balance });
+
     //Third call
-    useEffect(() => {
-        const fetchIPFS = async (ids) => {
-            let params = [];
-            let url = "";
-            if (ids.data.includes("ipfs://")) {
-                url = ids.data.replace("ipfs://", "https://nftstorage.link/ipfs/");
-            }
-            else if (ids.data.includes("ipfs//")) {
-                url = ids.data.replace("ipfs//", "https://nftstorage.link/ipfs/");
-            } else {
-                url = ids;
-            }
-            let res = [];
-            res = await fetch(`https://bookverse-proxy.herokuapp.com/${url}`, {
+    const fetchIPFS = async (ids) => {
+        let url = "";
+        if (ids.data.includes("ipfs://")) {
+            url = ids.data.replace("ipfs://", "https://nftstorage.link/ipfs/");
+        }
+        else if (ids.data.includes("ipfs//")) {
+            url = ids.data.replace("ipfs//", "https://nftstorage.link/ipfs/");
+        } else {
+            url = ids;
+        }
+        const res = await fetch(`https://bookverse-proxy.herokuapp.com/${url}`, {
             "method": "GET",
             "headers": {
                 "Content-Type": "application/json",
                 }
             }
         )
-        .then(res => {
-            if(!res.ok) {
-                throw Error("There was an error in the last call, please report it to support")
-            }
-            return res.json();
-        })
-        .then(data => params.push(data))
-        .then(data2 => data2 === params.length && setIpfs(params))
-        .catch(error => console.log(error))
+        const result = await res.json();
+        return result;
     };
-        tokens!==null && tokens.map(data => fetchIPFS(data));
-    }, [!!tokens]);
+
+    const { data: ipfs } = useQuery({ queryKey: ['ipfs'], queryFn: () => Promise.all(tokenId.map(ids => fetchIPFS(ids))), enabled: !!tokenId });
 
     return (
         <div className='grid grid-cols-1 gap-y-3 gap-x-0 mt-1 lg:grid-cols-4'>
