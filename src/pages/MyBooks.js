@@ -7,9 +7,6 @@ import { data } from 'autoprefixer';
 const MyBooks = () => {
 
     const { address, isConnected } = useAccount();
-    // const [tokens, setTokens] = useState(null);
-    // const [totalBalance, setTotalBalance] = useState(null);
-    // const [ipfs, setIpfs] = useState(null);
     const chain = process.env.REACT_APP_CHAIN;
     const nftContract = process.env.REACT_APP_DROP_CONTRACT;
 
