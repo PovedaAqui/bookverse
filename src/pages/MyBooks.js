@@ -26,9 +26,6 @@ const MyBooks = () => {
         const resultFiltered = result.find(element => element?.contractAddress?.toLowerCase() === nftContract.toLowerCase());
         const resultBalances = resultFiltered.balances.map(ids => ids.tokenId)
         return resultBalances;
-        // .then(res2 => res2.find(element => element?.contractAddress?.toLowerCase() === nftContract.toLowerCase()))
-        // .then(res3 => res3.balances.map(element => element?.tokenId))
-        // .then(res4 => setTotalBalance(res4))
     };
 
     //First call
