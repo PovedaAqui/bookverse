@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useAccount } from 'wagmi';
 import { useQuery } from '@tanstack/react-query';
 import Card from '../components/Card';
-import { data } from 'autoprefixer';
 
 const MyBooks = () => {
 
