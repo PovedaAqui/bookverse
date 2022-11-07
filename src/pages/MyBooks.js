@@ -18,10 +18,14 @@ const MyBooks = () => {
                 }
             }
         )
-        const result = await res.json();
-        const resultFiltered = result.find(element => element?.contractAddress?.toLowerCase() === nftContract.toLowerCase());
-        const resultBalances = resultFiltered.balances.map(ids => ids.tokenId)
-        return resultBalances;
+        try {
+            const result = await res.json();
+            const resultFiltered = result.find(element => element?.contractAddress?.toLowerCase() === nftContract.toLowerCase());
+            const resultBalances = resultFiltered.balances.map(ids => ids.tokenId)
+            return resultBalances;
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     //First call
@@ -37,8 +41,12 @@ const MyBooks = () => {
                 }
             }
         )
-        const result = await res.json();
-        return result;
+        try {
+            const result = await res.json();
+            return result;
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     const { data: tokenId } = useQuery({ queryKey: ['tokenId'], queryFn: () => Promise.all(balance.map(ids => fetchMetadata(ids))), enabled: !!balance });
@@ -61,8 +69,12 @@ const MyBooks = () => {
                 }
             }
         )
-        const result = await res.json();
-        return result;
+        try {
+            const result = await res.json();
+            return result;
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     const { data: ipfs } = useQuery({ queryKey: ['ipfs'], queryFn: () => Promise.all(tokenId.map(ids => fetchIPFS(ids))), enabled: !!tokenId });
