@@ -1,7 +1,7 @@
 import React from 'react';
 import { useClaimConditions, useContract } from '@thirdweb-dev/react';
 
-//Custom hook to get MATIC/USD price from Chainlink
+//Custom hook to clain NFT
 
 const usePrice = (id) => {
   const { contract } = useContract(process.env.REACT_APP_DROP_CONTRACT);

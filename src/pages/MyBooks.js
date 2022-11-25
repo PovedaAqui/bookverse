@@ -6,85 +6,23 @@ import Card from '../components/Card';
 const MyBooks = () => {
 
     const { address, isConnected } = useAccount();
-    const chain = process.env.REACT_APP_CHAIN;
-    const nftContract = process.env.REACT_APP_DROP_CONTRACT;
 
-    const fetchBalance = async () => {
-        const res = await fetch(`https://bookverse-proxy.herokuapp.com/https://api-eu1.tatum.io/v3/multitoken/address/balance/${chain}/${address}`, {
+    const fetchNFT = async () => {
+        const res = await fetch(`http://localhost:8000/api/get-my-books?address=${address}`, {
             "method": "GET",
-            "headers": {
-                "Content-Type": "application/json",
-                "x-api-key": process.env.REACT_APP_TATUM
-                }
             }
         )
-        try {
-            const result = await res.json();
-            const resultFiltered = result.find(element => element?.contractAddress?.toLowerCase() === nftContract.toLowerCase());
-            const resultBalances = resultFiltered.balances.map(ids => ids.tokenId)
-            return resultBalances;
-        } catch (error) {
-            console.log(error);
-        }
+        return res.json();
     };
-
-    //First call
-    const { data: balance } = useQuery({ queryKey: ['nfts'], queryFn: fetchBalance});
-
-    //Second call
-    const fetchMetadata = async (ids) => {
-        const res = await fetch(`https://bookverse-proxy.herokuapp.com/https://api-eu1.tatum.io/v3/multitoken/metadata/${chain}/${nftContract}/${ids}`, {
-            "method": "GET",
-            "headers": {
-                "Content-Type": "application/json",
-                "x-api-key": process.env.REACT_APP_TATUM
-                }
-            }
-        )
-        try {
-            const result = await res.json();
-            return result;
-        } catch (error) {
-            console.log(error);
-        }
-    };
-
-    const { data: tokenId } = useQuery({ queryKey: ['tokenId'], queryFn: () => Promise.all(balance.map(ids => fetchMetadata(ids))), enabled: !!balance });
-
-    //Third call
-    const fetchIPFS = async (ids) => {
-        let url = "";
-        if (ids.data.includes("ipfs://")) {
-            url = ids.data.replace("ipfs://", "https://nftstorage.link/ipfs/");
-        }
-        else if (ids.data.includes("ipfs//")) {
-            url = ids.data.replace("ipfs//", "https://nftstorage.link/ipfs/");
-        } else {
-            url = ids;
-        }
-        const res = await fetch(`https://bookverse-proxy.herokuapp.com/${url}`, {
-            "method": "GET",
-            "headers": {
-                "Content-Type": "application/json",
-                }
-            }
-        )
-        try {
-            const result = await res.json();
-            return result;
-        } catch (error) {
-            console.log(error);
-        }
-    };
-
-    const { data: ipfs } = useQuery({ queryKey: ['ipfs'], queryFn: () => Promise.all(tokenId.map(ids => fetchIPFS(ids))), enabled: !!tokenId });
+    
+    const { isLoading, data } = useQuery(['nfts'], fetchNFT, { enabled: isConnected });
 
     return (
         <div className='grid grid-cols-1 gap-y-3 gap-x-0 mt-1 lg:grid-cols-4'>
-            {isConnected && !ipfs? <h1>Loading your books...</h1> : ipfs?.map((nft, id)=>{
+            {isConnected && isLoading? <h1>Loading your books...</h1> : data?.nfts.map((nft, id)=>{
                 return (
                     <div key={id}>
-                        <Card name={nft?.name} description={nft?.description} image={nft?.image} external_url={nft?.external_url} tokenId={nft?.external_url?.substr(66, 1)} />
+                        <Card name={nft?.metadata?.name} description={nft?.metadata?.description} image={nft?.metadata?.image} external_url={nft?.metadata?.external_url} tokenId={nft?.token_id} author={nft?.metadata?.attributes} />
                     </div>
                 )
             })}

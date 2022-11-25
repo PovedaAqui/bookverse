@@ -5,11 +5,11 @@ import React from 'react';
 import { Disclosure } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import { ConnectWallet } from './ConnectWallet';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const navigation = [
-  { name: 'My Books', href: '/', current: true },
-  { name: 'Store', href: '/store', current: false },
+  { name: 'My Books', href: '/mybooks', current: true },
+  { name: 'Store', href: '/', current: false },
   { name: 'FAQs', href: '/faqs', current: false },
 ]
 
@@ -37,16 +37,20 @@ export default function NavBar() {
               </div>
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
-                  <img
-                    className="block lg:hidden h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=500"
-                    alt="Workflow"
-                  />
-                  <img
-                    className="hidden lg:block h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=500"
-                    alt="Workflow"
-                  />
+                  <Link to={'/'}>
+                    <img
+                      className="block lg:hidden h-8 w-auto bg-transparent"
+                      src="https://bookverse.s3.eu-west-3.amazonaws.com/luis.png?shade=500"
+                      alt="Logo"
+                    />
+                  </Link>
+                  <Link to={'/'}>
+                    <img
+                      className="hidden lg:block h-8 w-auto bg-transparent"
+                      src="https://bookverse.s3.eu-west-3.amazonaws.com/luis.png?shade=500"
+                      alt="Logo"
+                    />
+                  </Link>
                 </div>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
