@@ -8,7 +8,7 @@ const MyBooks = () => {
     const { address, isConnected } = useAccount();
 
     const fetchNFT = async () => {
-        const res = await fetch(`https://us-central1-bookverse-67d9d.cloudfunctions.net/app/api/get-my-books?address=${address}`, {
+        const res = await fetch(`http://localhost:8000/api/get-my-books?address=${address}`, {
             "method": "GET",
             }
         )
