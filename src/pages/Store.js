@@ -1,9 +1,6 @@
 import React from 'react';
 import { useContract, useNFTs } from '@thirdweb-dev/react';
 import Card2 from '../components/Card2';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-
-// const queryClient = new QueryClient();
 
 const Store = () => {
 
@@ -25,14 +22,4 @@ const Store = () => {
     )
 }
 
-// const hof = (WrappedComponent) => {
-//     // Its job is to return a react component warpping the baby component
-//     return (props) => (
-//         <QueryClientProvider client={queryClient}>
-//             <WrappedComponent {...props} />
-//         </QueryClientProvider>
-//     );
-// };
-
-// export default hof(Store);
 export default Store;
