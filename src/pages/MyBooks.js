@@ -16,6 +16,7 @@ const MyBooks = () => {
     };
     
     const { isLoading, data } = useQuery(['nfts'], fetchNFT, { enabled: isConnected });
+    console.log(data);
 
     return (
         <div className='grid grid-cols-1 gap-y-3 gap-x-0 mt-1 lg:grid-cols-4'>
