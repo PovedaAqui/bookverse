@@ -45,7 +45,7 @@ const ListingPage = () => {
 
   const fetchCheckoutLink = async () => { // fetch the checkout link from the server
     setPending(true);
-    const response = await fetch(`https://obscure-taiga-79570.herokuapp.com/api/create-paper-intent?listingId=${listingId}&img=${img}`);
+    const response = await fetch(`https://obscure-taiga-79570.herokuapp.com/api/create-paper-intent?listingId=${listingId}&img=${img}&name=${nft.metadata.name}`);
     const data = await response.json();
     window.open(data.checkoutLinkIntentUrl, "_blank");
     setPending(false);
