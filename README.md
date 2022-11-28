@@ -34,10 +34,10 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">Bookverse</h3>
+<h3 align="center">Bookverse Frontend</h3>
 
   <p align="center">
-    Bookverse is a Collectible Books (cBooks) Marketplace (also know as NFTBooks)
+    Bookverse is a Digital Collectible Books (cBooks) Marketplace (also know as NFTBooks)
     <br />
     <a href="https://github.com/povedaaqui/bookverse"><strong>Explore the docs »</strong></a>
     <br />
@@ -143,7 +143,7 @@ Follow this guide to make it works locally.
    ```
 7. We're using a relayer to avoid gas fees for users, provided by Openzeppelin, create yours, then, add it to `env`
    ```js
-   const REACT_APP_WEBHOOK_URL = 'ENTER YOUR CONTRACT ADDRESS';
+   const REACT_APP_WEBHOOK_URL = 'ENTER YOUR OPENZEPPELIN RELAY ADDRESS';
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
