@@ -8,11 +8,12 @@ const MyBooks = () => {
     const { address, isConnected } = useAccount();
 
     const fetchNFT = async () => {
-        const res = await fetch(`http://localhost:8000/api/get-my-books?address=${address}`, {
+        const res = await fetch(`https://obscure-taiga-79570.herokuapp.com/api/get-my-books?address=${address}`, {
             "method": "GET",
             }
         )
-        return res.json();
+        const response = await res.json();
+        return response;
     };
     
     const { isLoading, data } = useQuery(['nfts'], fetchNFT, { enabled: isConnected });
