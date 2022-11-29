@@ -48,7 +48,7 @@ const ListingPage = () => {
     const response = await fetch(`https://obscure-taiga-79570.herokuapp.com/api/create-paper-intent?listingId=${listingId}&img=${img}&name=${nft.metadata.name}`);
     const data = await response.json();
     console.log(data);
-    window.open(data.returnData.checkoutLinkIntentUrl, "_blank");
+    window.open(data.returnData.checkoutLinkIntentUrl ?? data.checkoutLinkIntentUrl, "_blank");
     setPending(false);
   };
 
