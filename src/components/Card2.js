@@ -12,7 +12,9 @@ const Card2 = ({image, listingId, ...props}) => {
     const [pair, setPair] = useState(null);
 
     let url = "";
-    url = image?.replace("ipfs//", "https://nftstorage.link/ipfs/");
+    if (image) { // if image is not null
+        url = image.replace("ipfs//", "https://nftstorage.link/ipfs/");
+    }
 
     const { data, isFetched } = useDataFeed();
     const tokenPrice = isFetched && (parseInt(data?.answer)*10**-8).toFixed(2);
