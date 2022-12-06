@@ -2,7 +2,7 @@ import React from 'react';
 import DropdownMenu from './DropdownMenu';
 import { useState, useEffect } from 'react';
 
-const Card = ({image, ...props}) => {
+const Card = ({image, name, author, tokenId, ...props}) => {
 
     const [url, setUrl] = useState(null);
     const [externalUrl, setExternalUrl] = useState(null);
@@ -38,18 +38,18 @@ const Card = ({image, ...props}) => {
     return (
         <div className="flex justify-center relative m-2">
             <div className="rounded-lg shadow-lg bg-white max-w-xs max-h-xs">
-                <a href={externalUrl} rel="external">
+                <a href={externalUrl} target="_blank" rel="external">
                     {url ? (
                         <img className="rounded-t-lg" src={url} alt="cover"/>
                         ) : (<div>Loading...</div>)}
                 </a>
                 <div className="relative p-5 block">
-                    <h5 className="text-gray-900 text-xl font-medium mb-0">{props.name}</h5>
-                    <p className="text-gray-700 text-sm font-medium tracking-wide mb-0">{props.author[0].value}</p>
+                    <h5 className="text-gray-900 text-xl font-medium mb-0">{name}</h5>
+                    <p className="text-gray-700 text-sm font-medium tracking-wide mb-0">{author[0].value}</p>
                     {/* <p className="text-gray-700 text-base mb-4 line-clamp-4">
                         {props.description}
                     </p> */}
-                    <DropdownMenu tokenId={props?.tokenId}/> 
+                    <DropdownMenu tokenId={tokenId}/> 
                 </div>
             </div>
         </div>

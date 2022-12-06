@@ -1,5 +1,4 @@
 import React from 'react';
-import Checkout from './Checkout';
 import { useState, useEffect } from 'react';
 import useDataFeed from '../utils/DataFeed';
 import usePrice from '../utils/Price';
@@ -44,7 +43,7 @@ const Card2 =  ({image, listingId, ...props}) => {
             }
         }
         getPrice();
-    }, [!!priceData])
+    }, [priceData])
 
     const maticToUsd = !price? "N/A" : price * tokenPrice;
 
@@ -57,7 +56,7 @@ const Card2 =  ({image, listingId, ...props}) => {
             }
         }
         supply();
-    }, [!!priceData])
+    }, [priceData])
 
     // const OpenModal = () => {
     //     setIsOpen(!isOpen)
@@ -66,7 +65,7 @@ const Card2 =  ({image, listingId, ...props}) => {
     return (
         <div className="flex justify-center relative m-2 lg:mx-0.5 lg:my-2">
             <div className="rounded-lg shadow-lg bg-white max-w-sm lg:max-w-xs">
-                <a href="javascript:void(0)" onClick={()=> navigate(`/listing/${listingId}`)}>
+                <a href="#" onClick={()=> navigate(`/listing/${listingId}`)}>
                     {url ? (
                         <img className="rounded-t-lg" src={url} alt="cover"/>
                         ) : (<div>Loading...</div>

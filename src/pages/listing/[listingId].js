@@ -23,12 +23,24 @@ const ListingPage = () => {
   const { data: nft, isLoading, isSuccess } = useNFT(contract, listingId);
 
   useEffect(() => {
-    if (nft?.metadata?.image) {
-      const url = nft.metadata?.image?.replace("ipfs//", "https://nftstorage.link/ipfs/");
+    const fetchUrl = async () => {
+      let url = "";
+      if (nft?.metadata?.image) {
+        try {
+            const response = await fetch("https://nftstorage.link/ipfs/");
+            url = response.ok
+            ? nft?.metadata?.image.replace("ipfs//", "https://nftstorage.link/ipfs/")
+            : "";
+        } catch (error) {
+          console.error(error);
+          url = nft?.metadata?.image.replace("ipfs//", "https://ipfs.io/ipfs/");
+        }
+      }
       setImg(url);
-    }
-  }, [isSuccess]);
-
+    };
+    fetchUrl();
+  }, [isSuccess, nft]);      
+  
   useEffect(() => { // set the price and the currency of the listing
     const getPrice = () => {
       if (priceToken) {
