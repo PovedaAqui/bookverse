@@ -16,7 +16,7 @@ const Card2 =  ({image, listingId, ...props}) => {
           let url = "";
           if (image) {
             try {
-                const response = await fetch("https://nftstorage.link/ipfs/");
+                const response = await fetch("https://nftstorage.link/");
                 url = response.ok
                 ? image.replace("ipfs//", "https://nftstorage.link/ipfs/")
                 : "";

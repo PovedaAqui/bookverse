@@ -12,7 +12,7 @@ const Card = ({image, name, author, tokenId, ...props}) => {
           if (!image) return "";
       
           try {
-            const response = await fetch("https://nftstorage.link/ipfs/");
+            const response = await fetch("https://nftstorage.link/");
             return response.ok ? image.replace("ipfs//", "https://nftstorage.link/ipfs/") : "";
           } catch (error) {
             console.error(error);

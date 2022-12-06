@@ -27,7 +27,7 @@ const ListingPage = () => {
       let url = "";
       if (nft?.metadata?.image) {
         try {
-            const response = await fetch("https://nftstorage.link/ipfs/");
+            const response = await fetch("https://nftstorage.link/");
             url = response.ok
             ? nft?.metadata?.image.replace("ipfs//", "https://nftstorage.link/ipfs/")
             : "";
