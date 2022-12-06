@@ -5,16 +5,32 @@ import useDataFeed from '../utils/DataFeed';
 import usePrice from '../utils/Price';
 import { useNavigate } from 'react-router-dom';
 
-const Card2 = ({image, listingId, ...props}) => {
+const Card2 =  ({image, listingId, ...props}) => {
 
     const navigate = useNavigate();
     const [price, setPrice] = useState(null);
     const [pair, setPair] = useState(null);
+    const [url, setUrl] = useState(null);
 
-    let url = "";
-    if (image) { // if image is not null
-        url = image.replace("ipfs//", "https://nftstorage.link/ipfs/");
-    }
+    useEffect(() => {
+        const fetchUrl = async () => {
+          let url = "";
+          if (image) {
+            try {
+                const response = await fetch("https://nftstorage.link/ipfs/");
+                url = response.ok
+                ? image.replace("ipfs//", "https://nftstorage.link/ipfs/")
+                : "";
+            } catch (error) {
+              console.error(error);
+              url = image.replace("ipfs//", "https://ipfs.io/ipfs/");
+            }
+          }
+          setUrl(url);
+        };
+        fetchUrl();
+    }, [image]);      
+      
 
     const { data, isFetched } = useDataFeed();
     const tokenPrice = isFetched && (parseInt(data?.answer)*10**-8).toFixed(2);
@@ -51,7 +67,10 @@ const Card2 = ({image, listingId, ...props}) => {
         <div className="flex justify-center relative m-2 lg:mx-0.5 lg:my-2">
             <div className="rounded-lg shadow-lg bg-white max-w-sm lg:max-w-xs">
                 <a href="javascript:void(0)" onClick={()=> navigate(`/listing/${listingId}`)}>
-                    <img className="rounded-t-lg" src={url} alt="cover"/>
+                    {url ? (
+                        <img className="rounded-t-lg" src={url} alt="cover"/>
+                        ) : (<div>Loading...</div>
+                    )}
                 </a>
                 {/* <Checkout isOpen={isOpen} setIsOpen={setIsOpen} listingId={listingId} /> */}
                 <div className="relative p-6">
