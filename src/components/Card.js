@@ -1,10 +1,29 @@
 import React from 'react';
 import DropdownMenu from './DropdownMenu';
+import { useState, useEffect } from 'react';
 
 const Card = ({image, ...props}) => {
 
-    let url = "";
-    url = image?.replace("ipfs//", "https://nftstorage.link/ipfs/");
+    const [url, setUrl] = useState(null);
+
+    useEffect(() => {
+        const fetchUrl = async () => {
+          let url = "";
+          if (image) {
+            try {
+                const response = await fetch("https://nftstorage.link/ipfs/");
+                url = response.ok
+                ? image.replace("ipfs//", "https://nftstorage.link/ipfs/")
+                : "";
+            } catch (error) {
+              console.error(error);
+              url = image.replace("ipfs//", "https://ipfs.io/ipfs/");
+            }
+          }
+          setUrl(url);
+        };
+        fetchUrl();
+    }, [image]);      
 
     let external_url = "";
     external_url = props?.external_url?.replace("ipfs//", "https://nftstorage.link/ipfs/");
@@ -13,7 +32,9 @@ const Card = ({image, ...props}) => {
         <div className="flex justify-center relative m-2">
             <div className="rounded-lg shadow-lg bg-white max-w-xs max-h-xs">
                 <a href={external_url} rel="external">
-                    <img className="rounded-t-lg" src={url} alt="cover"/>
+                    {url ? (
+                        <img className="rounded-t-lg" src={url} alt="cover"/>
+                        ) : (<div>Loading...</div>)}
                 </a>
                 <div className="relative p-5 block">
                     <h5 className="text-gray-900 text-xl font-medium mb-0">{props.name}</h5>
