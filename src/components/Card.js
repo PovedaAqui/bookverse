@@ -5,33 +5,40 @@ import { useState, useEffect } from 'react';
 const Card = ({image, ...props}) => {
 
     const [url, setUrl] = useState(null);
+    const [externalUrl, setExternalUrl] = useState(null);
 
     useEffect(() => {
-        const fetchUrl = async () => {
-          let url = "";
-          if (image) {
-            try {
-                const response = await fetch("https://nftstorage.link/ipfs/");
-                url = response.ok
-                ? image.replace("ipfs//", "https://nftstorage.link/ipfs/")
-                : "";
-            } catch (error) {
-              console.error(error);
-              url = image.replace("ipfs//", "https://ipfs.io/ipfs/");
-            }
+        const fetchUrl = async (image) => {
+          if (!image) return "";
+      
+          try {
+            const response = await fetch("https://nftstorage.link/ipfs/");
+            return response.ok ? image.replace("ipfs//", "https://nftstorage.link/ipfs/") : "";
+          } catch (error) {
+            console.error(error);
+            return image.replace("ipfs//", "https://ipfs.io/ipfs/");
           }
+        };
+      
+        const fetchImageUrl = async () => {
+          const url = await fetchUrl(image);
           setUrl(url);
         };
-        fetchUrl();
-    }, [image]);      
-
-    let external_url = "";
-    external_url = props?.external_url?.replace("ipfs//", "https://nftstorage.link/ipfs/");
+      
+        const fetchExternalUrl = async () => {
+          const externalUrl = await fetchUrl(props?.external_url);
+          setExternalUrl(externalUrl);
+        };
+      
+        fetchImageUrl();
+        fetchExternalUrl();
+    }, [image, props]);
+      
 
     return (
         <div className="flex justify-center relative m-2">
             <div className="rounded-lg shadow-lg bg-white max-w-xs max-h-xs">
-                <a href={external_url} rel="external">
+                <a href={externalUrl} rel="external">
                     {url ? (
                         <img className="rounded-t-lg" src={url} alt="cover"/>
                         ) : (<div>Loading...</div>)}
