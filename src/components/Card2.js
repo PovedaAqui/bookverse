@@ -75,7 +75,7 @@ const Card2 =  ({image, listingId, ...props}) => {
                 <div className="relative p-6">
                     <h5 className="text-gray-900 text-xl font-bold mb-0">{props?.name}</h5>
                     <p className="text-gray-700 text-sm font-medium tracking-wide mb-4">
-                        {props.author[0].value}
+                        {props?.author[0]?.value}
                     </p>
                     <p className="text-gray-700 text-base mb-4 line-clamp-4">
                         {props?.description}
