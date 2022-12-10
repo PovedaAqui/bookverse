@@ -65,7 +65,7 @@ const Card2 =  ({image, listingId, author, ...props}) => {
     return (
         <div className="flex justify-center relative m-2 lg:mx-0.5 lg:my-2">
             <div className="rounded-lg shadow-lg bg-white max-w-sm lg:max-w-xs">
-                <a href="#" onClick={()=> navigate(`/listing/${listingId}`)}>
+                <a href="/#" onClick={()=> navigate(`/listing/${listingId}`)}>
                     {url ? (
                         <img className="rounded-t-lg" src={url} alt="cover"/>
                         ) : (<div>Loading...</div>
@@ -74,9 +74,9 @@ const Card2 =  ({image, listingId, author, ...props}) => {
                 {/* <Checkout isOpen={isOpen} setIsOpen={setIsOpen} listingId={listingId} /> */}
                 <div className="relative p-6">
                     <h5 className="text-gray-900 text-xl font-bold mb-0">{props?.name}</h5>
-                    <p className="text-gray-700 text-sm font-medium tracking-wide mb-4">
+                    <div className="text-gray-700 text-sm font-medium tracking-wide mb-4">
                         {author? author[0]?.value : <div>Author...</div>}
-                    </p>
+                    </div>
                     <p className="text-gray-700 text-base mb-4 line-clamp-4">
                         {props?.description}
                     </p>
