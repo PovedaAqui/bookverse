@@ -45,7 +45,7 @@ const Card = ({image, name, author, tokenId, ...props}) => {
                 </a>
                 <div className="relative p-5 block">
                     <h5 className="text-gray-900 text-xl font-medium mb-0">{name}</h5>
-                    <p className="text-gray-700 text-sm font-medium tracking-wide mb-0">{author[0]?.value}</p>
+                    <p className="text-gray-700 text-sm font-medium tracking-wide mb-0">{author? author[0].value : <div>Loading...</div>}</p>
                     {/* <p className="text-gray-700 text-base mb-4 line-clamp-4">
                         {props.description}
                     </p> */}
