@@ -65,7 +65,7 @@ const Card2 =  ({image, listingId, author, ...props}) => {
     return (
         <div className="flex justify-center relative m-2 lg:mx-0.5 lg:my-2">
             <div className="rounded-lg shadow-lg bg-white max-w-sm lg:max-w-xs">
-                <a href="/#" onClick={()=> navigate(`/listing/${listingId}`)}>
+                <a className="cursor-pointer" onClick={()=> navigate(`/listing/${listingId}`)}>
                     {url ? (
                         <img className="rounded-t-lg" src={url} alt="cover"/>
                         ) : (<div>Loading...</div>
