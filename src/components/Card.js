@@ -36,23 +36,18 @@ const Card = ({image, name, author, tokenId, ...props}) => {
       
 
     return (
-        <div className="flex justify-center relative m-2">
-            <div className="rounded-lg shadow-lg bg-white max-w-xs max-h-xs">
-                <a href={externalUrl} target="_blank" rel="external">
-                    {url ? (
-                        <img className="rounded-t-lg" src={url} alt="cover"/>
-                        ) : (<div>Loading...</div>)}
-                </a>
-                <div className="relative p-5 block">
-                    <h5 className="text-gray-900 text-xl font-medium mb-0">{name}</h5>
-                    <div className="text-gray-700 text-sm font-medium tracking-wide mb-0">{author? author[0]?.value : <div>Author...</div>}</div>
-                    {/* <p className="text-gray-700 text-base mb-4 line-clamp-4">
-                        {props.description}
-                    </p> */}
-                    <DropdownMenu tokenId={tokenId}/> 
-                </div>
-            </div>
+      <div className="relative max-w-sm rounded-lg overflow-hidden shadow-lg">
+        <a href={externalUrl} target="_blank" rel="external">
+          {url ? (
+            <img className="rounded-t-lg" src={url} alt="cover"/>
+            ) : (<div>Loading...</div>)}
+        <div className="px-4 py-4">
+          <div className="font-bold text-xl mb-1 text-left text-gray-800">{name}</div>
+          <div className="text-gray-700 text-base tracking-wide">{author? author[0]?.value : <div>Author...</div>}</div>
         </div>
+        </a>
+        <div className="absolute right-0 bottom-0 z-10 align-middle"><DropdownMenu tokenId={tokenId}/></div>
+      </div>
     )
 }
 
