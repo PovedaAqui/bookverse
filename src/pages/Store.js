@@ -9,7 +9,7 @@ const Store = () => {
     const { data: nfts, isLoading } = useNFTs(contract, { start: 0, count: 100 });
     
     return (
-        <div className='grid grid-cols-1 gap-3 mt-1 lg:grid-cols-4 lg:gap-x-0'>
+        <div className='grid grid-cols-2 gap-3 m-2 lg:grid-cols-5'>
             {isLoading && <h1>Loading...</h1>}
             {nfts && nfts?.map((nfts, id) => {
                 return (

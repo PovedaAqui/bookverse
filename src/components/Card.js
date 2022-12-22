@@ -36,17 +36,16 @@ const Card = ({image, name, author, tokenId, ...props}) => {
       
 
     return (
-      <div className="relative max-w-sm rounded-lg overflow-hidden shadow-lg">
+      <div className="relative w-full sm:max-w-xs md:max-w-sm rounded-lg overflow-hidden shadow-sm sm:shadow-md">
         <a href={externalUrl} target="_blank" rel="external">
-          {url ? (
-            <img className="rounded-t-lg" src={url} alt="cover"/>
-            ) : (<div>Loading...</div>)}
-        <div className="px-4 py-4">
-          <div className="font-bold text-xl mb-1 text-left text-gray-800">{name}</div>
-          <div className="text-gray-700 text-base tracking-wide">{author? author[0]?.value : <div>Author...</div>}</div>
-        </div>
+          {url ? (<img className="rounded-t-lg object-cover w-full h-48 sm:h-72" src={url} alt="cover"/>) 
+          : (<div className="h-48 sm:h-64 bg-gray-200 flex items-center justify-center animate-pulse">Loading...</div>)}
+          <div className="px-4 py-2 sm:py-4">
+            <div className="font-bold text-sm sm:text-base mb-0 text-gray-800">{name? name : <div>Title...</div>}</div>
+            <div className="font-semibold text-gray-700 text-sm sm:text-base tracking-wide">{author? author[0]?.value : <div>Author...</div>}</div>
+          </div>
         </a>
-        <div className="absolute right-0 bottom-0 z-10 align-middle"><DropdownMenu tokenId={tokenId}/></div>
+        <div><DropdownMenu tokenId={tokenId}/></div>
       </div>
     )
 }

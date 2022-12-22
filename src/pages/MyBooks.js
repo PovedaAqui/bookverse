@@ -19,7 +19,7 @@ const MyBooks = () => {
     const { isLoading, data } = useQuery(['nfts'], fetchNFT, { enabled: isConnected });
 
     return (
-        <div className='grid grid-cols-1 gap-y-3 m-2 lg:gap-x-3 lg:grid-cols-5 lg:max-w-max'>
+        <div className='grid grid-cols-2 gap-3 m-2 lg:grid-cols-5'>
             {isConnected && isLoading? <h1>Loading your books...</h1> : data?.nfts?.map((nft, id)=>{
                 return (
                     <div key={id}>

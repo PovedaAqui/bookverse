@@ -1,16 +1,16 @@
 import { Menu, Transition } from '@headlessui/react'
-import { Fragment, useEffect, useRef, useState } from 'react'
-import { ChevronDownIcon, DotsVerticalIcon } from '@heroicons/react/solid'
+import { Fragment } from 'react'
+import { DotsVerticalIcon } from '@heroicons/react/solid'
 
 export default function DropdownMenu({tokenId}) {
 
   return (
-    <div className="absolute right-0 bottom-0 p-2 w-56 text-right">
+    <div className="absolute bottom-0 right-0 w-56 text-right z-5">
       <Menu as="div" className="relative inline-block text-left">
         <div>
           <Menu.Button className="inline-flex w-full justify-center rounded-md bg-white bg-opacity-100 px-2 py-2 text-sm font-medium text-gray-700 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-opacity-75">
             <DotsVerticalIcon
-              className="ml-0 mr-0 h-5 w-5 text-gray-700 hover:text-violet-500"
+              className="ml-0 mr-0 h-4 w-4 text-gray-700 hover:text-violet-500"
               aria-hidden="true"
             />
           </Menu.Button>
@@ -24,7 +24,7 @@ export default function DropdownMenu({tokenId}) {
           leaveFrom="transform opacity-100 scale-100"
           leaveTo="transform opacity-0 scale-95"
         >
-          <Menu.Items className="absolute -translate-y-full right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+          <Menu.Items className="absolute z-10 -translate-y-full right-0 -mt-1 w-44 lg:w-max origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
             <div className="px-1 py-1 ">
               <Menu.Item disabled>
                 {({ active }) => (
