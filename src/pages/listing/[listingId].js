@@ -65,22 +65,22 @@ const ListingPage = () => {
   };
 
   return (
-    <div className="container flex flex-col lg:min-w-full lg:min-h-screen mx-auto lg:mt-auto mt-2 items-center justify-center lg:bg-gray-100">
+    <div className="container flex flex-col min-w-full min-h-screen mx-auto mt-2 items-center justify-center bg-gray-100 sm:flex-row">
       {!isLoading && nft ? (
-        <div className="flex flex-col items-center justify-center lg:flex-row">
+        <div className="flex flex-col items-center justify-center max-w-xs sm:max-w-lg sm:ml-4">
           <div className="flex flex-col items-center justify-center max-w-xs"> {/* NFT image in the left */}
-              <img src={img} alt="cover" />
+              <img src={img} alt="cover" className="w-full h-auto" />
           </div>
-          <div className="flex flex-col items-center justify-center max-w-lg text-left ml-4"> {/* NFT info in the right */}
-            <h1 className="text-2xl font-bold lg:text-3xl mt-2 lg:mt-0">{nft.metadata.name}</h1>
-            <p className="text-sm lg:text-base font-normal tracking-wide mb-2">{nft.metadata.attributes[0].value}</p>
-            <p className="text-sm lg:text-lg mb-2">{nft.metadata.description}</p>
+          <div className="flex flex-col items-center justify-center max-w-lg text-left sm:ml-4"> {/* NFT info in the right */}
+            <h1 className="text-2xl font-bold sm:text-3xl mt-2 sm:mt-0">{nft.metadata.name}</h1>
+            <p className="text-sm sm:text-base font-normal tracking-wide mb-2">{nft.metadata.attributes[0].value}</p>
+            <p className="text-sm sm:text-lg mb-2">{nft.metadata.description}</p>
             <h2 className="font-bold mb-2">Price: {price} {currency}</h2>
             <div className="flex flex-col items-center justify-center align-middle mt-2"> {/* Buy button below*/}
-              {!pending? <button onClick={() => fetchCheckoutLink()} className="w-full bg-gradient-to-br from-orange-100 via-blue-700 to-indigo-400 hover:bg-blue-700 text-white font-bold py-2 px-11 mb-2 rounded">
+              {!pending? <button onClick={() => fetchCheckoutLink()} className="w-full bg-gradient-to-br from-orange-100 via-blue-700 to-indigo-400 hover:bg-blue-700 text-white font-bold py-2 px-4 sm:px-6 mb-2 rounded">
                 Buy Now
               </button> : 
-              <button className="bg-gradient-to-br from-orange-100 via-blue-700 to-indigo-400 animate-pulse text-white font-bold py-2 px-11 rounded mb-3">
+              <button className="bg-gradient-to-br from-orange-100 via-blue-700 to-indigo-400 animate-pulse text-white font-bold py-2 px-4 sm:px-6 rounded mb-3">
                 Loading...
               </button>}
             </div>
