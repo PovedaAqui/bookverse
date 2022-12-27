@@ -65,7 +65,7 @@ const ListingPage = () => {
   };
 
   return (
-    <div className="container flex flex-col min-w-full min-h-screen mx-auto mt-2 items-center justify-center bg-gray-100 sm:flex-row">
+    <div className="container flex flex-col min-w-full min-h-screen mx-auto p-2 items-center justify-center bg-gray-100 sm:flex-row">
       {!isLoading && nft ? (
         <div className="flex flex-col items-center justify-center max-w-xs sm:max-w-lg sm:ml-4">
           <div className="flex flex-col items-center justify-center max-w-xs"> {/* NFT image in the left */}
@@ -77,7 +77,7 @@ const ListingPage = () => {
             <p className="text-sm sm:text-lg mb-2">{nft.metadata.description}</p>
             <h2 className="font-bold mb-2">Price: {price} {currency}</h2>
             <div className="flex flex-col items-center justify-center align-middle mt-2"> {/* Buy button below*/}
-              {!pending? <button onClick={() => fetchCheckoutLink()} className="w-full bg-gradient-to-br from-orange-100 via-blue-700 to-indigo-400 hover:bg-blue-700 text-white font-bold py-2 px-4 sm:px-6 mb-2 rounded">
+              {!pending? <button onClick={() => fetchCheckoutLink()} className="w-full bg-gradient-to-br from-orange-100 via-blue-700 to-indigo-400 hover:bg-blue-700 text-white font-bold py-2 px-4 sm:px-6 mb-0 rounded">
                 Buy Now
               </button> : 
               <button className="bg-gradient-to-br from-orange-100 via-blue-700 to-indigo-400 animate-pulse text-white font-bold py-2 px-4 sm:px-6 rounded mb-3">

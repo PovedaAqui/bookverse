@@ -8,6 +8,10 @@ import ListingPage from './pages/listing/[listingId]';
 
 function App() {
 
+  const Docs = () => {
+    window.location.replace("https://bookverse.gitbook.io/bookverse/");
+  }
+
   return (
     <div>
       <NavBar />
@@ -16,6 +20,7 @@ function App() {
         <Route path='/shelf' element={<MyBooks />} />
         <Route path='/faqs' element={<Faqs/>} />
         <Route path='/listing/:listingId' element={<ListingPage />} />
+        <Route path='/docs' element={<Docs/>} />
       </Routes>
       <ReactQueryDevtools initialIsOpen={false} />
     </div>
