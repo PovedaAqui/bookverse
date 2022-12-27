@@ -13,7 +13,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path='/' element={<Store />} />
-        <Route path='/mybooks' element={<MyBooks />} />
+        <Route path='/shelf' element={<MyBooks />} />
         <Route path='/faqs' element={<Faqs/>} />
         <Route path='/listing/:listingId' element={<ListingPage />} />
       </Routes>

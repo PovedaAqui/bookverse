@@ -8,7 +8,7 @@ import { ConnectWallet } from './ConnectWallet';
 import { Link, NavLink } from 'react-router-dom';
 
 const navigation = [
-  { name: 'My Books', href: '/mybooks', current: true },
+  { name: 'Shelf', href: '/shelf', current: true },
   { name: 'Store', href: '/', current: false },
   { name: 'FAQs', href: '/faqs', current: false },
 ]
