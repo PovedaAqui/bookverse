@@ -6,6 +6,7 @@ import { Disclosure } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import { ConnectWallet } from './ConnectWallet';
 import { Link, NavLink } from 'react-router-dom';
+import SearchBar from './SearchBar';
 
 const navigation = [
   { name: 'Shelf', href: '/shelf', current: true },
@@ -72,6 +73,7 @@ export default function NavBar() {
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                {/* <SearchBar /> */}
                 <ConnectWallet />
               </div>
             </div>

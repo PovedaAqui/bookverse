@@ -44,7 +44,8 @@ const ListingPage = () => {
   useEffect(() => { // set the price and the currency of the listing
     const getPrice = () => {
       if (priceToken) {
-        let priceConverted = priceToken.map(data => (parseInt(data.price)*10**-18)); // convert the price from hex to decimal
+        // let priceConverted = priceToken.map(data => (parseInt(data.price)*10**-18)); // convert the price from hex to decimal
+        let priceConverted = priceToken.map(data => data.currencyMetadata.displayValue); // get the price of the listing
         let currency = priceToken.map(data => data.currencyMetadata.symbol); // get the currency of the listing
         setPrice(priceConverted);
         setCurrency(currency);
