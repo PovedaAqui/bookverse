@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import useDataFeed from '../utils/DataFeed';
+import useDataFeed from '../utils/DataFeed'; // used to get the price of Matic
 import usePrice from '../utils/Price';
 import { useNavigate } from 'react-router-dom';
 
