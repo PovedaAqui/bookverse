@@ -45,6 +45,10 @@ const client = createClient({
       chains,
       options: {
         qrcode: true,
+        qrcodeModalOptions: {
+          mobileLinks: ['paper'],
+          desktopLinks: ['paper'],
+        },
       },
     }),
     new InjectedConnector({
