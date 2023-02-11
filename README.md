@@ -34,7 +34,7 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">Bookverse Frontend</h3>
+<h3 align="center">Bookverse Frontend (deprecated)</h3>
 
   <p align="center">
     Bookverse is a Digital Collectible Books (cBooks) Marketplace (also know as NFTBooks)
